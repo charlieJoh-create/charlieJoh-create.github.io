@@ -40,7 +40,7 @@ body {
 
 .content-box {
   background: transparent;
-  margin: 5px;
+  margin: 0.26vw;
 }
 
 /* changed: the menu, hero, About Me and Art Portfolio groups sit on one line */
@@ -48,22 +48,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;       /* groups start from the left */
-  gap: 80px;                         /* distance between the groups */
+  gap: 4.2vw;                        /* distance between the groups */
   padding-left: 5%; 
 }
 
 /* Navbar */
 .navbar {
   position: relative;
-  top: -205px;
-  left: -140px;  
+  top: -10.7vw;
+  left: -7.3vw;  
 }
 
 .navbar .nav-menu {
   display: flex;
   flex-direction: column;            /* the four links stack vertically */
   align-items: flex-start;           /* each link box is only as wide as its text */
-  gap: 30px;                         /* distance between the links */
+  gap: 1.6vw;                        /* distance between the links */
 }
 
 /* Centres the picture and text inside the link and stacks them vertically */
@@ -72,7 +72,7 @@ body {
   flex-direction: column;            /* picture on top, text below */
   align-items: center;               /* both centred in the middle */
   justify-content: center;
-  gap: 4px;                          /* space between the picture and the text */
+  gap: 0.2vw;                        /* space between the picture and the text */
   
   /* ADD THESE LINES FOR UNIFORM SIZE & ALIGNMENT */
   width: 120px;                      /* Forces all 3 boxes to be the exact same width */
@@ -107,7 +107,7 @@ body {
   display: flex;
   flex-direction: column;            /* picture on top, text below */
   align-items: center;               /* both centred in the middle */
-  gap: 6px;                          /* space between the picture and the text */
+  gap: 0.3vw;                        /* space between the picture and the text */
 }
 
 
@@ -116,10 +116,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 100px 0 35px 0;             /* changed: side margins removed, the row's gap spaces the groups */
+  margin: 5.2vw 0 1.8vw 0;            /* changed: side margins removed, the row's gap spaces the groups */
 
   position: relative;
-  top: 60px;
+  top: 3.1vw;
 }
 
 .hero-card {
@@ -140,7 +140,7 @@ body {
   top: 50%;
   left: 45%;
   width: 68%;
-  transform: translate(calc(-50% - 20px), calc(-50% + 10px));
+  transform: translate(calc(-50% - 1vw), calc(-50% + 0.5vw));
   text-align: center;
   font-size: max(0.8rem, 4.2cqw);     /* text scales with the image */
 }
@@ -152,16 +152,16 @@ body {
 }
 
 .hero-details .description {
-  margin: 15px 0;
+  margin: 0.8vw 0;
 }
 
 /* Photo section (About Me) */
 .photo-section {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 35px 0;                 /* changed: side margins removed */
+  margin: 0 0 1.8vw 0;                /* changed: side margins removed */
   position: relative;
-  top: 10px;
+  top: 0.5vw;
 }
 
 .photo-card {
@@ -211,7 +211,7 @@ body {
   left: 10%;
   transform: translateX(-50%);
   width: max-content;
-  margin-bottom: 8px;
+  margin-bottom: 0.4vw;
   list-style: none;
 }
 
@@ -246,10 +246,10 @@ body {
 /* Art Portfolio section (to the right of About Me) */
 .portfolio-section {
   display: flex;
-  margin: 80px 0 35px 0;               /* top 80px keeps it a bit further down */
+  margin: 4.2vw 0 1.8vw 0;             /* top margin keeps it a bit further down */
   position: relative;
-  top: 270px;
-  left: -180px;
+  top: 14.1vw;
+  left: -9.4vw;
 }
 
 /* Schoolbell font for this section (the * rule needs this to reach the children) */
@@ -278,8 +278,8 @@ body {
  transform: scale(1.14, 0.98);
 
   position: relative;
-  top: -365px;
-  left: -50px;
+  top: -19vw;
+  left: -2.6vw;
 }
 
 /* The "Art Portfolio" link box, in front of the image */
@@ -353,14 +353,14 @@ body {
 
 .about-box {
   max-width: 800px;
-  margin: 60px auto;
+  margin: 3.1vw auto;
   padding: 0 20px;
 }
 
 .about-title {
   font-size: 2.5rem;
   color: var(--primary-color);
-  margin-bottom: 20px;
+  margin-bottom: 1vw;
 }
 
 .about-text {
@@ -371,7 +371,7 @@ body {
 
 .back-link {
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 1.6vw;
   padding: 10px 18px;
   color: var(--primary-color);
   font-weight: var(--font-weight-bold);
@@ -395,7 +395,7 @@ body {
   display: block;
   width: 100%;
   height: auto;              
-  margin: 20px auto;        
+  margin: 1vw auto;        
 }
 
 
@@ -417,10 +417,10 @@ body {
     width: 101.3%;        /* Stretches it to fit the full width */
     height: 50px;       /* Set a fixed height so it doesn't get too tall */
     object-fit: fill;   /* Stretches the image horizontally/vertically to fit dimensions */
-    left: -12px;
+    left: -0.6vw;
     /* If you want it to overlap or shift upwards slightly like your 'top' idea: */
     position: relative;
-    top: +167px;         /* Adjust this negative value to move it up */
+    top: 8.7vw;         /* Adjust this value to move it up or down */
 }
 
 
@@ -454,4 +454,3 @@ body {
   height: auto;
   border-radius: 10px;
 }
-
