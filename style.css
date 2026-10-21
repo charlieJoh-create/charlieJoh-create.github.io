@@ -274,12 +274,12 @@ body {
 .flower-image {
   display: block;
   width: 100%;
-  height:auto;
- transform: scale(1.14, 0.98);
+  height: auto;
+  transform: scale(1.14, 0.98);
 
   position: relative;
-  top: -19vw;
-  left: -2.6vw;
+  top: -91.25cqw;      /* 1cqw = 1% of the Art Portfolio card's width */
+  left: -12.5cqw;
 }
 
 /* The "Art Portfolio" link box, in front of the image */
@@ -400,9 +400,12 @@ body {
 
 
 .taskbar-section {
+    position: fixed;     /* locked to the screen, not the page */
+    bottom: 0;           /* touches the bottom edge */
+    left: 0;             /* touches the left edge */
+    right: 0;            /* touches the right edge */
     width: 100%;
-    position: relative; /* Allows positioning children if needed */
-    margin-top: auto;   /* Pushes it down if using flexbox on parent */
+    z-index: 100;        /* stays on top of everything else */
 }
 
 
@@ -414,13 +417,9 @@ body {
 
 .taskbar-image {
     display: block;
-    width: 101.3%;        /* Stretches it to fit the full width */
-    height: 50px;       /* Set a fixed height so it doesn't get too tall */
-    object-fit: fill;   /* Stretches the image horizontally/vertically to fit dimensions */
-    left: -0.6vw;
-    /* If you want it to overlap or shift upwards slightly like your 'top' idea: */
-    position: relative;
-    top: 8.7vw;         /* Adjust this value to move it up or down */
+    width: 100%;        /* always spans the full screen width */
+    height: 50px;
+    object-fit: fill;   /* Stretches the image to fit the dimensions */
 }
 
 
