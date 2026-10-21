@@ -64,7 +64,7 @@ body {
 .navbar {
   position: relative;
   align-self: flex-start;            
-  height: 0;                      /* Restored: keeps the original layout anchor */
+  height: auto;
   overflow: visible;                 
   
   top: -20rem;
