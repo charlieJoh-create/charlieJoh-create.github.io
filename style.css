@@ -1,0 +1,457 @@
+* {
+  font-family: "Actor", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1d220e;
+  --attention-color: #a7282e;
+  --dark-color: rgba(52, 58, 64);
+  --transparent-color: rgba(17, 141, 243, 0.5);
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  --font-size-medium: 1rem;
+  --font-weight-bold: 700;
+  --font-weight-skinny: 300;
+}
+
+/* Styling for whole site */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-image: url("images/Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.content-box {
+  background: transparent;
+  margin: 5px;
+}
+
+/* changed: the menu, hero, About Me and Art Portfolio groups sit on one line */
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;       /* groups start from the left */
+  gap: 80px;                         /* distance between the groups */
+  padding-left: 5%; 
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  top: -205px;
+  left: -140px;  
+}
+
+.navbar .nav-menu {
+  display: flex;
+  flex-direction: column;            /* the four links stack vertically */
+  align-items: flex-start;           /* each link box is only as wide as its text */
+  gap: 30px;                         /* distance between the links */
+}
+
+/* Centres the picture and text inside the link and stacks them vertically */
+.navbar .nav-menu .nav-link {
+  display: flex;
+  flex-direction: column;            /* picture on top, text below */
+  align-items: center;               /* both centred in the middle */
+  justify-content: center;
+  gap: 4px;                          /* space between the picture and the text */
+  
+  /* ADD THESE LINES FOR UNIFORM SIZE & ALIGNMENT */
+  width: 120px;                      /* Forces all 3 boxes to be the exact same width */
+  box-sizing: border-box;            /* Ensures padding doesn't break the width */
+  
+  padding: 3px 3px;
+  color: var(--white-color);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-skinny);
+  text-shadow: 2px 2px 5px var(--black-color);
+  -webkit-text-stroke: 0.5px currentColor;   /* makes the letters a bit thicker */
+  transition: 0.1s ease;
+  
+  white-space: normal;               /* Allows text to wrap nicely inside the fixed width */
+  text-align: center;
+}
+
+.navbar .nav-menu .nav-link:hover {
+  background: var(--transparent-color);
+  color: var(--white-color);
+}
+
+/* Navigation pictures inside the menu links */
+.navbar .nav-menu .nav-image {
+  display: block;
+  width: clamp(30px, 6vw, 70px); 
+  height: auto;                     
+}
+
+/* Centres the picture and the text inside each menu item */
+.navbar .nav-menu .nav-item {
+  display: flex;
+  flex-direction: column;            /* picture on top, text below */
+  align-items: center;               /* both centred in the middle */
+  gap: 6px;                          /* space between the picture and the text */
+}
+
+
+/* Hero section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 0 35px 0;             /* changed: side margins removed, the row's gap spaces the groups */
+
+  position: relative;
+  top: 60px;
+}
+
+.hero-card {
+  position: relative;
+  width: clamp(200px, 28vw, 620px);   /* changed: smaller so four groups fit on one line */
+  container-type: inline-size;        /* lets the text size follow the card size */
+}
+
+.hero-image {
+  display: block;
+  width: 85%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.hero-details {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 68%;
+  transform: translate(calc(-50% - 20px), calc(-50% + 10px));
+  text-align: center;
+  font-size: max(0.8rem, 4.2cqw);     /* text scales with the image */
+}
+
+/* Lucida Console for the hero text */
+.hero-details,
+.hero-details * {
+  font-family: "Lucida Console", sans-serif;
+}
+
+.hero-details .description {
+  margin: 15px 0;
+}
+
+/* Photo section (About Me) */
+.photo-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 35px 0;                 /* changed: side margins removed */
+  position: relative;
+  top: 10px;
+}
+
+.photo-card {
+  position: relative;
+  width: clamp(160px, 22vw, 400px);   /* changed: smaller so four groups fit on one line */
+  container-type: inline-size;
+}
+
+.video-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* The "Me" image on top of the video player image */
+.photo-details {
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  font-size: max(0.8rem, 4.2cqw);
+}
+
+.me-image {
+  display: block;
+  width: 170%;
+  height: auto;
+
+  /* fades all four edges into whatever is behind the photo */
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  mask-composite: intersect;
+}
+
+/* The "About Me" title box, in front of the photos */
+.photo-details .nav-item {
+  position: absolute;
+  z-index: 10;
+  bottom: 10%;
+  left: 10%;
+  transform: translateX(-50%);
+  width: max-content;
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.photo-details .nav-link {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5em;                 /* same size and weight the h2 title had */
+  font-weight: bold;
+
+  color: var(--white-color);
+  background: var(--black-color);
+  padding: 10px 18px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  white-space: nowrap;
+
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 5%, black 95%, transparent),
+    linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, black 5%, black 95%, transparent),
+    linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+  mask-composite: intersect;
+}
+
+.photo-details .nav-link:hover {
+  background: var(--white-color);
+  color: var(--dark-color);
+}
+
+/* Art Portfolio section (to the right of About Me) */
+.portfolio-section {
+  display: flex;
+  margin: 80px 0 35px 0;               /* top 80px keeps it a bit further down */
+  position: relative;
+  top: 270px;
+  left: -180px;
+}
+
+/* Schoolbell font for this section (the * rule needs this to reach the children) */
+.portfolio-section,
+.portfolio-section * {
+  font-family: "Schoolbell", cursive;
+}
+
+.portfolio-card {
+  position: relative;
+  width: clamp(160px, 22vw, 400px);   /* same size as the other cards */
+  container-type: inline-size;
+}
+
+.portfolio-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.flower-image {
+  display: block;
+  width: 100%;
+  height:auto;
+ transform: scale(1.14, 0.98);
+
+  position: relative;
+  top: -365px;
+  left: -50px;
+}
+
+/* The "Art Portfolio" link box, in front of the image */
+.portfolio-link {
+  position: absolute;
+  z-index: 10;
+  bottom: 78%;
+  left: 20%;
+  display: inline-block;
+  text-align: center;
+  font-size: max(1.8rem, 6.3cqw);      /* text scales with the image */
+  font-weight: bold;
+
+  color: var(--black-color);
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  white-space: nowrap;
+
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 5%, black 95%, transparent),
+    linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, black 5%, black 95%, transparent),
+    linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+  mask-composite: intersect;
+}
+
+.portfolio-link:hover {
+  background: var(--dark-color);
+  color: var(--white-color);
+}
+
+/* changed: on tablets and phones the groups stack again so nothing is squeezed */
+@media (max-width: 1100px) {
+  .top-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-card,
+  .photo-card,
+  .portfolio-card {
+    width: clamp(260px, 80vw, 480px);
+  }
+}
+
+/* Small screens: stack the text under the image so it stays readable */
+@media (max-width: 600px) {
+  .hero-card {
+    width: 100%;
+  }
+
+  .hero-details {
+    position: static;
+    transform: none;
+    width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+  }
+}
+
+/* About Me page */
+.about-page {
+  background-image: none;          /* removes the main page's background photo */
+  background-color: #f3efe6;       /* the new background colour for this page */
+  min-height: 100vh;
+}
+
+.about-box {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--dark-color);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  color: var(--primary-color);
+  font-weight: var(--font-weight-bold);
+  transition: 0.3s ease;
+}
+
+.back-link:hover {
+  background: var(--attention-color);
+  color: var(--dark-color);
+}
+
+.cv-frame {
+  width: 100%;
+  height: 85vh;             
+  border: none;
+  border-radius: 10px;
+}
+
+.Art-image,
+.VideoS-image {
+  display: block;
+  width: 100%;
+  height: auto;              
+  margin: 20px auto;        
+}
+
+
+.taskbar-section {
+    width: 100%;
+    position: relative; /* Allows positioning children if needed */
+    margin-top: auto;   /* Pushes it down if using flexbox on parent */
+}
+
+
+.taskbar-card {
+    width: 100%;
+    line-height: 0;     /* Removes any extra inline spacing below the image */
+}
+
+
+.taskbar-image {
+    display: block;
+    width: 101.3%;        /* Stretches it to fit the full width */
+    height: 50px;       /* Set a fixed height so it doesn't get too tall */
+    object-fit: fill;   /* Stretches the image horizontally/vertically to fit dimensions */
+    left: -12px;
+    /* If you want it to overlap or shift upwards slightly like your 'top' idea: */
+    position: relative;
+    top: +167px;         /* Adjust this negative value to move it up */
+}
+
+
+/* Clean styling for the independent welcome image */
+.welcome-container {
+  position: absolute;
+  top: 5%;  /* Adjust down from the top */
+  left: 35%;  /* Adjust from the left */
+  width: 20%; /* Control the exact size */
+  z-index: 5;
+}
+
+.welcome-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Clean styling for the independent cat image */
+.cat-container {
+  position: absolute;
+  bottom: 10%; /* Adjust up from the bottom */
+  left: 8%;   /* Adjust from the right */
+  width: 20%;  /* Control the exact size */
+  z-index: 5;
+}
+
+.cat-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
