@@ -72,7 +72,7 @@ body {
 
 .navbar .nav-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
   gap: clamp(0.5rem, 1.6vw, 1.5rem); /* shrinks with the screen, but never below 0.5rem */
 }
