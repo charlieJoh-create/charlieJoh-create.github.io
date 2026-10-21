@@ -1,6 +1,6 @@
-/* html {
+html {
   font-size: 16px;                   /* base size, so 1rem = 16px */
-} */
+}
 
 * {
   font-family: "Actor", sans-serif;
@@ -39,23 +39,22 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
 
-  /* overflow-wrap: break-word;         */
-   /* long words wrap instead of running off the screen */
+  overflow-wrap: break-word;         /* long words wrap instead of running off the screen */
   padding-bottom: 3.125rem;          /* room for the fixed taskbar so it never covers content */
 }
 
-/* .content-box {
+.content-box {
   background: transparent;
   margin: 0.26vw;
-} */
+}
 
 .top-row {
-  display:block;
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
-  /* gap: 4.2vw; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4.2vw;
   padding-left: 5%; 
 }
 
@@ -63,7 +62,7 @@ body {
 /* Navbar */
 .navbar {
   position: relative;
-  /* align-self: flex-start;             */
+  align-self: flex-start;            
   height: auto;
   overflow: visible;                 
   
@@ -340,7 +339,7 @@ body {
 
   .portfolio-section {
     top: -5rem;
-    left: +50rem;
+    left: +5rem;
   }
 
   .hero-card,
