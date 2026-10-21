@@ -67,7 +67,7 @@ body {
   height: 0;                      /* Restored: keeps the original layout anchor */
   overflow: visible;                 
   
-  top: -2rem;
+  top: -20rem;
   /* margin-top: clamp(1rem, 4vw, 6rem); */
   /* clamp(3rem, 8vw, 12rem);     */
   
