@@ -53,7 +53,7 @@ body {
 .top-row {
   display: flex;
   /* align-items: flex-start; */
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   gap: 4.2vw;
   padding-left: 5%; 
 }
