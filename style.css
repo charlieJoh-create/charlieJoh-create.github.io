@@ -64,12 +64,15 @@ body {
 .navbar {
   position: relative;
   align-self: flex-start;            
-  height: auto;                      /* Changed from 0 to auto for predictable layout */
+  height: 0;                      /* Restored: keeps the original layout anchor */
   overflow: visible;                 
   
-  /* Use clamp() so it scales gracefully but stops drifting on smaller viewports */
-  margin-top: clamp(2rem, 8vw, 6rem);    
-  left: clamp(-3rem, -7.3vw, -1rem);
+  /* Restores your original 8vw for large screens, but adds a minimum floor 
+     (e.g., 3rem) so it stops drifting upwards on smaller screens */
+  margin-top: clamp(3rem, 8vw, 12rem);    
+  
+  /* Restores your original -7.3vw left offset with a safety clamp */
+  left: clamp(-10rem, -7.3vw, -2rem);
 }
 
 .navbar .nav-menu {
