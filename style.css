@@ -67,11 +67,8 @@ body {
   height: 0;                      /* Restored: keeps the original layout anchor */
   overflow: visible;                 
   
-  /* Restores your original 8vw for large screens, but adds a minimum floor 
-     (e.g., 3rem) so it stops drifting upwards on smaller screens */
-  margin-top: clamp(3rem, 8vw, 12rem);    
+  margin-top: clamp(12rem, 8vw, 3rem);    
   
-  /* Restores your original -7.3vw left offset with a safety clamp */
   left: clamp(-10rem, -7.3vw, -2rem);
 }
 
