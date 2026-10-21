@@ -62,15 +62,17 @@ body {
 /* Navbar */
 .navbar {
   position: relative;
-  top: -10.7vw;
-  left: -7.3vw;  
+  align-self: flex-start;            /* sticks to the top of the row instead of centring */
+  top: 0;                            /* no more upward shift, so it can't leave the frame */
+  margin-top: 2vw;                   /* tune this to move the navbar down or up a little */
+  left: -7.3vw;
 }
 
 .navbar .nav-menu {
   display: flex;
-  flex-direction: column;            /* the four links stack vertically */
-  align-items: flex-start;           /* each link box is only as wide as its text */
-  gap: 1.6vw;                        /* distance between the links */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.5rem, 1.6vw, 1.5rem); /* shrinks with the screen, but never below 0.5rem */
 }
 
 /* Centres the picture and text inside the link and stacks them vertically */
@@ -82,7 +84,7 @@ body {
   gap: 0.2vw;                        /* space between the picture and the text */
   
   /* ADD THESE LINES FOR UNIFORM SIZE & ALIGNMENT */
-  width: 7.5rem;                     /* Forces all 3 boxes to be the exact same width (was 120px) */
+  width: clamp(4.5rem, 6.25vw, 7.5rem);
   box-sizing: border-box;            /* Ensures padding doesn't break the width */
   
   padding: 0.1875rem 0.1875rem;
@@ -340,6 +342,11 @@ body {
   .photo-card,
   .portfolio-card {
     width: clamp(16.25rem, 80vw, 30rem);
+  }
+
+  .navbar {
+    align-self: center;
+    margin-top: 0;
   }
 }
 
