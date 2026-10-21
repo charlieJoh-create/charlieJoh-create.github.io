@@ -53,7 +53,7 @@ body {
 /* changed: the menu, hero, About Me and Art Portfolio groups sit on one line */
 .top-row {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: flex-start;       /* groups start from the left */
   gap: 4.2vw;                        /* distance between the groups */
   padding-left: 5%; 
