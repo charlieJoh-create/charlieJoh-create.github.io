@@ -333,8 +333,6 @@ body {
     align-items: center;
   }
 
-  /* the desktop shifts are not needed once everything is stacked in one column */
-  .navbar,
   .portfolio-section {
     top: 0;
     left: 0;
@@ -346,7 +344,7 @@ body {
     width: clamp(16.25rem, 80vw, 30rem);
   }
 
-.navbar {
+  .navbar {
     top: 0;
     left: 0;
     height: auto;
