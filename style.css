@@ -59,20 +59,22 @@ body {
   padding-left: 5%; 
 }
 
-/* Navbar */
+
 /* Navbar */
 .navbar {
   position: relative;
   align-self: flex-start;            
-  height: 0;                         
+  height: auto;                      /* Changed from 0 to auto for predictable layout */
   overflow: visible;                 
-  margin-top: 8vw;                   
-  left: -7.3vw;
+  
+  /* Use clamp() so it scales gracefully but stops drifting on smaller viewports */
+  margin-top: clamp(2rem, 8vw, 6rem);    
+  left: clamp(-3rem, -7.3vw, -1rem);
 }
 
 .navbar .nav-menu {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: flex-start;
   gap: clamp(0.5rem, 1.6vw, 1.5rem); /* shrinks with the screen, but never below 0.5rem */
 }
