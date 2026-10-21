@@ -66,11 +66,12 @@ body {
   height: auto;
   overflow: visible;                 
   
-  top: -20rem;
+  top: -12.8rem;
+  left: -8,75rem;
   /* margin-top: clamp(1rem, 4vw, 6rem); */
   /* clamp(3rem, 8vw, 12rem);     */
   
-  left: clamp(-10rem, -7.3vw, -2rem);
+  /* left: clamp(-10rem, -7.3vw, -2rem); */
 }
 
 .navbar .nav-menu {
