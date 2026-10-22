@@ -293,7 +293,7 @@ body {
   transform: scale(1.14, 0.98);
 
   position: relative;
-  top: -91.25cqw;      /* 1cqw = 1% of the Art Portfolio card's width */
+  top: -91.25cqw;
   left: -12.5cqw;
 }
 
@@ -330,7 +330,7 @@ body {
   color: var(--white-color);
 }
 
-/* changed: on tablets and phones the groups stack again so nothing is squeezed (was 1100px) */
+/* changed: on tablets and phones the groups stack again so nothing is squeezed */
 @media (max-width: 68.75rem) {
   .top-row {
     flex-direction: column;
@@ -357,7 +357,7 @@ body {
   }
 }
 
-/* Small screens: stack the text under the image so it stays readable (was 600px) */
+/* Small screens: stack the text under the image so it stays readable */
 @media (max-width: 37.5rem) {
   .hero-card {
     width: 100%;
@@ -399,7 +399,7 @@ body {
 }
 
 .about-box {
-  max-width: 50rem;                /* keeps lines of text a readable length (was 800px) */
+  max-width: 50rem;                /* keeps lines of text a readable length */
   margin: 3.1vw auto;
   padding: 0 1.25rem;
 }
